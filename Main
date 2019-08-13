@@ -1,0 +1,36 @@
+
+
+# This is a number guessing game
+# User will be asked to guess a number between 1 and 10
+# If the number is less than computer's number , user will get a hint
+# User is allowed 6 chances
+
+# ask user for name
+userName = input(print("Hi Welcome to the game!! What's your name?"))
+
+#import random library
+import random
+myNum = random.randint(1,10)
+
+numfChances=0
+while numfChances < 6:
+    userNum = input(print("Hi" + " " + userName + " " + "Guess a number between 1 and 10"))
+    userNum = int(userNum)
+
+    numfChances = numfChances + 1
+    if userNum < myNum:
+        print("Number is too Low")
+    if userNum > myNum:
+        print("Number is too high")
+    if userNum == myNum:
+        break
+userNum = int(userNum)
+if userNum == myNum:
+    numfChances = str(numfChances)
+    print("Well done", userName , "You guessed the number in ", numfChances, "chances")
+
+if userNum != myNum:
+    number = str(myNum)
+    print("Wrong! my number was " , number)
+
+
